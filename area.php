@@ -48,20 +48,25 @@
         background: grey;
         color: white;
         cursor: pointer;
+        margin: 20px 0;
+
     }
 
     .formulario button:hover{
         background: greenyellow;
         color: black;
-
     }
 
-    .resultado{
-        background: wheat;
-        display: inline-block;
-        padding: 5px;
-
+    .resultado-div{
+        /*background: steelblue;*/
+        margin: 20px;
+        font-weight: bold;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
     }
+
+
     </style>
 </head>
 <body>
@@ -78,14 +83,14 @@
                 <input type="number" step="any" name="altura" required>
             </div>
 
-            <button type="submit" id="calcular" >Calcular</button>
+            <button type="submit" id="calcular" class="calcular" >Calcular</button>
 
         </form>
 
 
 
-        <div class="resultado">
-            <label for="resultado">Resultado:</label>
+        <div class="resultado-div">
+            <label for="resultado-label" class="resultado-label">Resultado:</label>
                 <?php if (isset($_POST["base"]) && isset($_POST["altura"])) {
                     $base = (float) $_POST["base"];
                     $altura = (float) $_POST["altura"];
@@ -95,9 +100,6 @@
                 } ?>
         </div>
     </div>
-
-
-
 
 </body>
 </html>
