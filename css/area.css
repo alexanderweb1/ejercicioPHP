@@ -1,0 +1,60 @@
+.contenedor{
+    background: -webkit-linear-gradient(90deg, #2c486a,#365f7d,#46bfab);background: linear-gradient(90deg, #2c486a,#365f7d,#46bfab);
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+}
+
+.formulario input{
+    background: ghostwhite;
+    border: 1px solid green;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.base, .altura{
+    display: grid;
+    gap: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.formulario input:focus{
+    border: 2px solid red;
+    outline: none;
+}
+
+.formulario button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    background: grey;
+    color: white;
+    cursor: pointer;
+    margin: 20px 0;
+
+}
+
+.formulario button:hover{
+    background: greenyellow;
+    color: black;
+}
+
+.resultado-div{
+    /*background: steelblue;*/
+    margin: 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
