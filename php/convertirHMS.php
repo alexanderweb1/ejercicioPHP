@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Seg_totales</title>
- <link rel="stylesheet" href="../css/convertirHMS.css">
+ <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
 
@@ -13,12 +13,12 @@
             Convertir Horas, M y S a segudos totales
         </h2>
         <form method="post" action="#" class="formulario">
-            <div class="horas">
+            <div class="campos horas">
                 <label for="horas">Valor en horas</label>
                 <input type="number" name="horas" required>
             </div>
 
-            <div class="minutos">
+            <div class="campos minutos">
                 <label for="minutos">Valor en minutos</label>
                 <input type="number" name="minutos" required>
             </div>
@@ -31,23 +31,24 @@
             <button type="submit" class="btn_calcular">Calcular</button>
         </form>
 
-        <div class="resultado_div">
+        <div class="resultado-div">
             <p for="resultado" class="resultado_label">
                 El resultado es:
             </p>
 
-            <?php
-           if(isset($_POST['horas']) && isset($_POST['minutos']) && isset($_POST['segundos'])){
-               $horas = (int) $_POST['horas'];
-               $minutos = (int) $_POST['minutos'];
-               $segundos = (int) $_POST['segundos'];
+            <?php if (
+                isset($_POST["horas"]) &&
+                isset($_POST["minutos"]) &&
+                isset($_POST["segundos"])
+            ) {
+                $horas = (int) $_POST["horas"];
+                $minutos = (int) $_POST["minutos"];
+                $segundos = (int) $_POST["segundos"];
 
-               $seg_totales = ($horas * 3600) + ($minutos + 60) + $segundos;
+                $seg_totales = $horas * 3600 + ($minutos + 60) + $segundos;
 
-               echo "$seg_totales" ;
-
-           }
-            ?>
+                echo "$seg_totales";
+            } ?>
         </div>
 
     </div>

@@ -1,26 +1,38 @@
-.contenedor{
-    background: -webkit-linear-gradient(90deg, #2c486a,#365f7d,#46bfab);background: linear-gradient(90deg, #2c486a,#365f7d,#46bfab);
+.contenedor {
+    background: -webkit-linear-gradient(90deg, #2c486a, #365f7d, #46bfab);
+    background: linear-gradient(90deg, #2c486a, #365f7d, #46bfab);
     border-radius: 5px;
     padding: 20px;
     width: 400px;
     margin: 0 auto;
+    box-shadow: 0 0 16px 4px aquamarine;
 }
-.formulario{
+fieldset {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 17px;
+    border-radius: 5px;
 }
 
-.formulario input{
+fieldset legend {
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+fieldset input {
     background: ghostwhite;
     border: 1px solid green;
     padding: 5px;
     border-radius: 5px;
 }
 
-.base, .altura{
+.campos {
     display: grid;
     gap: 8px;
     color: white;
@@ -28,12 +40,12 @@
     font-size: 17px;
 }
 
-.formulario input:focus{
-    border: 2px solid red;
+fieldset input:focus {
+    border: 1px solid red;
     outline: none;
 }
 
-.formulario button{
+fieldset button {
     padding: 10px 15px;
     border-radius: 5px;
     border: none;
@@ -42,17 +54,14 @@
     color: white;
     cursor: pointer;
     margin: 20px 0;
-
 }
 
-.formulario button:hover{
+fieldset button:hover {
     background: greenyellow;
     color: black;
 }
 
-.resultado-div{
-    /*background: steelblue;*/
-    margin: 20px;
+fieldset .resultado-div {
     font-weight: bold;
     color: white;
     border-radius: 5px;
