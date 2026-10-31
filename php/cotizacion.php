@@ -24,18 +24,20 @@
                <button type="submit" class="btn-calcular">Calcular</button>
 
                <div class="resultado-div">
-                   <label for="resultado-lbl">El resultado es:</label>
-                   <?php if (
-                       isset($_POST["euros"]) &&
-                       isset($_POST["dolares"])
-                   ) {
-                       $euros = (float) $_POST["euros"];
-                       $dolares = (float) $_POST["dolares"];
+                   <strong for="resultado-lbl">El resultado es:</strong>
+                   <output>
+                       <?php if (
+                           isset($_POST["euros"]) &&
+                           isset($_POST["dolares"])
+                       ) {
+                           $euros = (float) $_POST["euros"];
+                           $dolares = (float) $_POST["dolares"];
 
-                       $cotizacion = $euros * $dolares;
+                           $cotizacion = $euros * $dolares;
 
-                       echo "<p>$cotizacion</p>";
-                   } ?>
+                           echo "$cotizacion";
+                       } ?>
+                   </output>
                </div>
            </fieldset>
        </form>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,47 +9,53 @@
 <body>
 
     <div class="contenedor">
-        <h2 class="convertir_title">
-            Convertir Horas, M y S a segudos totales
-        </h2>
         <form method="post" action="#" class="formulario">
-            <div class="campos horas">
-                <label for="horas">Valor en horas</label>
-                <input type="number" name="horas" required>
-            </div>
+            <fieldset>
+                <legend>Convertir Horas, M y S a segudos totales
+                </legend>
+                <div class="campos horas">
+                    <label for="horas">Valor en horas</label>
+                    <input type="number" name="horas" required>
+                </div>
 
-            <div class="campos minutos">
-                <label for="minutos">Valor en minutos</label>
-                <input type="number" name="minutos" required>
-            </div>
+                <div class="campos minutos">
+                    <label for="minutos">Valor en minutos</label>
+                    <input type="number" name="minutos" required>
+                </div>
 
-            <div class="segundos">
-                <label for="segundos">Valor en segundos</label>
-                <input type="number" name="segundos" required>
-            </div>
+                <div class="campos segundos">
+                    <label for="segundos">Valor en segundos</label>
+                    <input type="number" name="segundos" required>
+                </div>
 
-            <button type="submit" class="btn_calcular">Calcular</button>
+                <button type="submit" class="btn_calcular">Calcular</button>
+
+                <div class="resultado-div">
+                    <strong for="resultado" class="resultado_label">
+                        El resultado es:
+                    </strong>
+
+                    <output>
+                        <?php if (
+                            isset($_POST["horas"]) &&
+                            isset($_POST["minutos"]) &&
+                            isset($_POST["segundos"])
+                        ) {
+                            $horas = (int) $_POST["horas"];
+                            $minutos = (int) $_POST["minutos"];
+                            $segundos = (int) $_POST["segundos"];
+
+                            $seg_totales =
+                                $horas * 3600 + ($minutos + 60) + $segundos;
+
+                            echo "$seg_totales";
+                        } ?>
+                    </output>
+                </div>
+            </fieldset>
         </form>
 
-        <div class="resultado-div">
-            <p for="resultado" class="resultado_label">
-                El resultado es:
-            </p>
 
-            <?php if (
-                isset($_POST["horas"]) &&
-                isset($_POST["minutos"]) &&
-                isset($_POST["segundos"])
-            ) {
-                $horas = (int) $_POST["horas"];
-                $minutos = (int) $_POST["minutos"];
-                $segundos = (int) $_POST["segundos"];
-
-                $seg_totales = $horas * 3600 + ($minutos + 60) + $segundos;
-
-                echo "$seg_totales";
-            } ?>
-        </div>
 
     </div>
 
